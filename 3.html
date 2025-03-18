@@ -1,45 +1,56 @@
 <html>
 <head>
-  <title> Pertemuan 3 styling dengan css </title>
+  <title> Pertemuan 3 Styling dengan CSS </title>
 <style>
 input{
   width:80%;
-  background:green;
+  background:purple;
+}  
+#username{ background:green;}
+.bg-grey{ background:grey;}
+  
+@media screen and (max-width: 700px) {
+[class*='col-'] { width: 50%; }
 }
-#username{background:blue;}
-  .bg-grey{backgroun:grey;}
+@media screen and (max-width: 450px) {
+[class*='col-'] { width: 100%; }
+}
+
+
+</style>
+
 </head>
   <body>
 <header><a href="ipwija.ac.id"> Home </a></header>
-<main> hi
-<br/>
-</main id="main" class="main">
-<section> Halo Word </section>
+<main> hi 
+<br/> 
+</main id="main" class="main">    
+<section>Halo Word</section>
 
-<section id="gambar">
-<img src="edu.png" height="200" witdh="200">
-</section>
+    <section id="gambar">
+    <img src="edu.png" height="200" width="200">  
+    </section>
 
-<section id="from">
-  <from>
+    <section id="form" class="col-">
+      <form>
 <label>Username:</label><input id="username" type="text">
-<label>Password:</label><input class=".bg-grey" type="Password">
-<label>Warna:</label><input class=".bg-grey" type="color">
+<label>Password:</label><input class="bg-grey" type="password">
+<label>Warna:</label><input class="bg-grey" type="color">
 <label>Dropdown:</label>
-       <select>
-         <option>1</option>
-         <option>2</option>
-       </select>
+        <select>
+          <option>1</option>
+          <option>2</option>
+        </select>
 <input type="submit" value="cancel">
-      <button> login</button>
-   </from>
-</section>
-    
-<section id="paragraf">
+        <button> login</button>
+      </form>
+    </section>
+
+    <section id="paragraf" class="col-">
 <p>
-<h1> Pertemuan 2</h1>
+<h1> Pertemuan 2</h1>  
 <h2> HTML dasar </h2>
-pertemuan dasar HTML membuat paragraf <br/> sederhana dengan huruf <i>Miring</i>,<b>Tebal</b>
+pertemuan 2, dasar HTML membuat paragraf <br/> sederhana dengan huruf <i>miring </i>,<b>Tebal</b>
 </p>
   <ul>
     <li>1</li>
@@ -50,19 +61,20 @@ pertemuan dasar HTML membuat paragraf <br/> sederhana dengan huruf <i>Miring</i>
     <li>dua</li>
   </ol>
 </section>
-<section id="table">
+<section id="table" class="col-">
 <h2>table</h2>
 <table border="1">
 <thead>
-  <tr><th>jan </th><th>feb </th></tr> 
-</thead>
+  <tr><th>jan </th><th>feb </th></tr>
+</thead>  
 <tbody>
 <tr><td>1 </td><td>2 </td></tr>
 <tr><td>3 </td><td>4 </td></tr>
 </tbody>
 </table>
 </section>
-    
-<footer>@2025</footer>
+
+        
+<footer>@2025</footer>    
   </body>
 </html>
