@@ -52,22 +52,24 @@ button:hover, input[type=submit]:hover {
     background: aqua;
 }
 
-/* Container untuk Form & Pertemuan 2 */
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Section Paragraf */
+#paragraf {
+    padding: 15px;
     margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Agar konten tidak keluar */
 }
 
-/* List */
-ul {
+/* List dalam paragraf */
+#paragraf ul, 
+#paragraf ol {
+    padding-left: 20px; /* Supaya angka dan bullet tetap di dalam */
     margin: 10px 0;
-    padding-left: 20px;
-    list-style-type: disc;
 }
 
-li {
+#paragraf li {
     padding: 5px 0;
 }
 
@@ -109,4 +111,37 @@ section {
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media screen and (max-width: 900px) {
+    header {
+        text-align: left;
+        padding: 10px;
+    }
+
+    button, input[type=submit] {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    table th, table td {
+        padding: 5px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    section {
+        padding: 10px
+    }
 }
