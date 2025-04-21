@@ -3,34 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaksi JavaScript</title>
+    <title>Belajar JavaScript dan DOM</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        h1 { color: #2c3e50; }
-        .box { width: 120px; height: 120px; background-color: salmon; margin: 15px; }
-        button { padding: 10px 15px; margin-right: 10px; background-color: teal; color: white; border: none; cursor: pointer; }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2980b9; }
+        .box { width: 100px; height: 100px; background-color: #3498db; margin: 10px; transition: 0.3s; }
+        button { padding: 10px; margin: 5px; background-color: #2ecc71; border: none; color: white; cursor: pointer; }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
-    <h1 id="judul">Belajar JavaScript DOM</h1>
-    <div class="box" id="kotak"></div>
-    <button onclick="gantiWarna()">Ganti Warna</button>
-    <button onclick="hilangTampil()">Hilangkan/Tampilkan/button>
+    <h1 id="judul">JavaScript & DOM</h1>
+    <p id="teks">Klik tombol untuk berinteraksi!</p>
+    <div class="box" id="colorBox"></div>
+
+    <button onclick="ubahWarna()">Ubah Warna</button>
+    <button onclick="ubahTeks()">Ubah Teks</button>
+    <button onclick="sembunyikanBox()">Sembunyikan Kotak</button>
 
     <script>
-        const box = document.getElementById('kotak');
+        // Seleksi elemen
+        const box = document.getElementById('colorBox');
+        const teks = document.getElementById('teks');
         const judul = document.getElementById('judul');
-        let visible = true;
 
-        function gantiWarna() {
-            box.style.backgroundColor = box.style.backgroundColor === 'salmon' ? 'skyblue' : 'salmon';
-            judul.innerText = "Warna sudah diganti!";
+        // Event Handling & Interaksi Dinamis
+        function ubahWarna() {
+            box.style.backgroundColor = box.style.backgroundColor === 'tomato' ? '#3498db' : 'tomato';
         }
 
-        function hilangTampil() {
-            visible = !visible;
-            box.style.display = visible ? 'block' : 'none';
-            judul.innerText = visible ? "Kotak Muncul Lagi" : "Kotak Disembunyikan";
+        function ubahTeks() {
+            teks.innerText = "Teks telah berubah!";
+            judul.style.color = "tomato";
+        }
+
+        function sembunyikanBox() {
+            box.classList.toggle("hidden");
         }
     </script>
 </body>
