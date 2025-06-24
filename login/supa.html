@@ -73,8 +73,8 @@ async function login() {
 }
 
 async function logout() {
-  await supabase.auth.signOut()
-  content.innerHTML = '<p>Logout berhasil.</p>'
+  localStorage.removeItem("sessionUser");
+  window.location.href = "login/index.html";
 }
 
 // Load data hanya milik user yang login
