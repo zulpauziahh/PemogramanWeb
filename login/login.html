@@ -1,34 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0078d7;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: #005bb5;
+    }
+  </style>
 </head>
 <body>
-  <h2>Login Dulu Ya</h2>
-  <form id="loginForm">
-    <input type="text" id="username" placeholder="Username" required><br><br>
-    <input type="password" id="password" placeholder="Password" required><br><br>
-    <button type="submit">Login</button>
-  </form>
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
 
   <script>
     const users = {
-      zulpa: "duniaakhirat"
+      zulpa: 'duniaakhirat', // username dan password yang valid
     };
 
     document.getElementById("loginForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      const uname = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
+      const uname = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
 
       if (users[uname] && users[uname] === pass) {
         localStorage.setItem("sessionUser", uname);
         window.location.href = "../supa.html";
       } else {
-        alert("Login salah!");
+        alert("Username atau password salah!");
       }
     });
   </script>
+
 </body>
 </html>
